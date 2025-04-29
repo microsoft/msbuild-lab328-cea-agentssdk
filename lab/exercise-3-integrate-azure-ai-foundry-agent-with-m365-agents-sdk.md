@@ -12,7 +12,7 @@ Let's upgrade the Echo Bot by transforming it into a Generative AI-powered agent
     <PackageReference Include="Microsoft.SemanticKernel.Agents.AzureAI" Version="1.47.0-preview" />  
     ```
 
-1. Open **Program.cs** and add the following code snippet right before `var app = builder.Build()`:
+1. Open **Program.cs** and add the following code snippet right before var app = builder.Build():
     
     ```csharp
     // Configure AzureAIConfiguration 
@@ -175,10 +175,10 @@ Let's upgrade the Echo Bot by transforming it into a Generative AI-powered agent
 
 Once Dev Tunnel is created, hit **Start** or **F5** to start debugging. Microsoft Teams will launch automatically, and your agent app will pop up on the window. Select Add and start chatting with your agent.  
 
-You can ask one of the following questions to interact with the agent: 
-    - What’s the difference between Northwind Standard and Health Plus when it comes to emergency and mental health coverage?
-    - Can I use PerksPlus to pay for both a rock climbing class and a virtual fitness program?
-    - If I hit my out-of-pocket max on Northwind Standard, do I still pay for prescriptions?
+You can ask one of the following questions to interact with the agent:
+    - +++What’s the difference between Northwind Standard and Health Plus when it comes to emergency and mental health coverage?+++
+    - +++Can I use PerksPlus to pay for both a rock climbing class and a virtual fitness program?+++
+    - +++If I hit my out-of-pocket max on Northwind Standard, do I still pay for prescriptions?+++
 
 ## Next Step
 
