@@ -30,19 +30,19 @@ Select **Next >** to go to the first exercise.
 
 ===
 
-!INSTRUCTIONS [Prepare your agent in Azure AI Foundry ]()
+!INSTRUCTIONS [Prepare your agent in Azure AI Foundry ](https://raw.githubusercontent.com/microsoft/msbuild-lab328-cea-agentssdk/refs/heads/main/lab/exercise-1-prepare-your-agent-in-azure-ai-foundry.md)
 
 ===
 
-!INSTRUCTIONS [Build your first agent using M365 Agents SDK]()
+!INSTRUCTIONS [Build your first agent using M365 Agents SDK](https://raw.githubusercontent.com/microsoft/msbuild-lab328-cea-agentssdk/refs/heads/main/lab/exercise-2-build-your-first-agent-using-m365-agents-sdk.md)
 
 ===
 
-!INSTRUCTIONS [Integrate Azure AI Foundry agent with M365 Agents SDK]()
+!INSTRUCTIONS [Integrate Azure AI Foundry agent with M365 Agents SDK](https://raw.githubusercontent.com/microsoft/msbuild-lab328-cea-agentssdk/refs/heads/main/lab/exercise-3-integrate-azure-ai-foundry-agent-with-m365-agents-sdk.md)
 
 ===
 
-!INSTRUCTIONS [Bring your agent to Copilot Chat]()
+!INSTRUCTIONS [Bring your agent to Copilot Chat](https://raw.githubusercontent.com/microsoft/msbuild-lab328-cea-agentssdk/refs/heads/main/lab/exercise-4-bring-your-agent-to-copilot-chat.md)
 
 ## Discussions
 
