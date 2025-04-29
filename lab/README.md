@@ -25,6 +25,7 @@ Now you're ready to complete the exercises in this lab. The lab includes multipl
 The exercises are designed to be completed in order because they build on the data and resources created in the previous exercises, so make sure you complete each exercise before moving on to the next one.
 
 Don't worry if you run out of time to complete the entire lab. All of these exercises (and more) are available on [Copilot Developer Camp](https://aka.ms/copilotdevcamp).
+
 Select **Next >** to go to the first exercise.
 
 ===
@@ -46,3 +47,7 @@ Select **Next >** to go to the first exercise.
 ## Discussions
 
 Use the Discussion page on this repository to ask any questions or continue the learning conversation!
+
+## Next Step
+
+Select **Next >** to go to the next exercise Prepare your agent in Azure AI Foundry.
