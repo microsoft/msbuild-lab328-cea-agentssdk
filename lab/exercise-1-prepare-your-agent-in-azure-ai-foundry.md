@@ -4,20 +4,20 @@ In this exercise, you'll explore Azure AI Foundry—a platform that enables deve
 
 ## Step 1: Setup Azure AI Foundry 
 
-1. Navigate to [Azure AI Foundry](https://ai.azure.com) and sign to your Azure account. Use the following credentials to sign in:
+1. Open the browser and navigate to +++https://ai.azure.com+++ and sign to your Azure account. Use the following credentials to sign in:
     - **Email**: +++@lab.CloudPortalCredential(User1).Username+++
     - **Password**: +++@lab.CloudPortalCredential(User1).Password+++
 
 2. From the Azure AI Foundry homepage, select **Create a project**. Keep all the settings suggested and select **Create**. (It can take about 2-3 minutes to get all the resources created for the project.)
 3. Within your project, extend the left side panel and navigate to the **Agents** section under "Build and customize".
 4. Select your Azure OpenAI resource and select **Let’s go**.
-5. In the Deploy a model window, search and select gpt-4o, then **Confirm**. Keep the deployment details as suggested and select **Deploy**.
+5. In the Deploy a model window, search and select **gpt-4o**, then **Confirm**. Keep the deployment details as suggested and select **Deploy**.
 
 ## Step 2: Create your agent in Agent Playground 
 
-1. Access the **Agent Playground** to prototype and test your agent without writing code.
+1. Access the Agent Playground to prototype and test your agent without writing code.
 2. Click on **New agent** to create a new agent. Then, select **Try in playground**.
-3. In the **Setup** panel, provide a name for your agent as **Contoso HR Agent** and add the following instructions to define the agent's behavior:
+3. In the Setup panel, provide a name for your agent as +++Contoso HR Agent+++ and add the following instructions to define the agent's behavior:
  
     ```
     You are Contoso HR Agent, an internal assistant for Contoso Electronics. Your role is to help employees find accurate, policy-aligned answers to questions related to:
@@ -52,7 +52,7 @@ Select **+ Add** in Knowledge section and select **Files**, then **Select local 
     - +++How does the split copay work under Northwind Health Plus for office visits?+++
     - +++Can I combine yoga class reimbursements from PerksPlus with services covered under my health plan?+++
     - +++What values guide behavior and decision-making at Contoso Electronics?+++
-    - I’m seeing a non-participating provider — what costs should I expect under my current plan?
+    - +++I’m seeing a non-participating provider — what costs should I expect under my current plan?+++
 
 Observe the agent's responses and adjust instructions or tools as needed to refine performance.
 
