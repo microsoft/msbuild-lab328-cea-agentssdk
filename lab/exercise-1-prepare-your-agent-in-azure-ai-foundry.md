@@ -4,7 +4,7 @@ In this exercise, you'll explore Azure AI Foundry—a platform that enables deve
 
 ## Step 1: Setup Azure AI Foundry 
 
-1. Navigate to [Azure AI Foundry](https://ai.azure.com) and sign to your Azure account. Use the following credentials to sign in:
+1. Open the browser and navigate to +++https://ai.azure.com+++ and sign to your Azure account. Use the following credentials to sign in:
     - **Email**: +++@lab.CloudPortalCredential(User1).Username+++
     - **Password**: +++@lab.CloudPortalCredential(User1).Password+++
 
