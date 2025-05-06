@@ -10,8 +10,8 @@ This folder contains the public facing files for the Microsoft Build 2025 lab 32
 ## Sign into Windows
 
 1. In the virtual machine, sign into Windows using the following credentials:
-   - **User name**: +++@lab.VirtualMachine(Win11-Pro-Base-VM).Username+++
-   - **Password**: +++@lab.VirtualMachine(Win11-Pro-Base-VM).Password+++
+   - **User name**: +++@lab.VirtualMachine(Win11-Pro-Base).Username+++
+   - **Password**: +++@lab.VirtualMachine(Win11-Pro-Base).Password+++
 
 ## Exercises in this lab
 
