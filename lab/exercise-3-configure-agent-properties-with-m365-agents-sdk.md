@@ -1,51 +1,156 @@
-# Exercise 3: Integrate Azure AI Foundry agent with M365 Agents SDK
+# Exercise 3: Configure agent properties with M365 Agents SDK
 
 Let's upgrade the Echo Bot by transforming it into a Generative AI-powered agent.
 
-## Step 1:  Setup and configuration
+## Step 1: Update Project file with the new packages
 
-1. Right-click to **ContosoHRAgent** project and select **Edit Project File**, then add the following packages to in the list of ItemGroup that includes PackageReference:
+Right-click to **ContosoHRAgent** project and select **Edit Project File**, then add the following packages to in the list of ItemGroup that includes **PackageReference**:
 
-    ```
-    <PackageReference Include="Azure.AI.Projects" Version="1.0.0-beta.8" /> 
-    <PackageReference Include="Azure.Identity" Version="1.14.0-beta.3" /> 
-    <PackageReference Include="Microsoft.SemanticKernel.Agents.AzureAI" Version="1.47.0-preview" />  
-    ```
+```
+<PackageReference Include="Azure.AI.Projects" Version="1.0.0-beta.8" /> 
+<PackageReference Include="Azure.Identity" Version="1.14.0-beta.3" /> 
+<PackageReference Include="Microsoft.SemanticKernel.Agents.AzureAI" Version="1.47.0-preview" />  
+```
 
-1. Open **Program.cs** and add the following code snippet right before var app = builder.Build():
+The updated Project file will look like below, make sure to save the changes before proceeding:
+
+```
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Agents.Authentication.Msal" Version="1.*" />
+    <PackageReference Include="Microsoft.Agents.Hosting.AspNetCore" Version="1.*" />
+	<PackageReference Include="Azure.AI.Projects" Version="1.0.0-beta.8" />
+	<PackageReference Include="Azure.Identity" Version="1.14.0-beta.3" />
+	<PackageReference Include="Microsoft.SemanticKernel.Agents.AzureAI" Version="1.47.0-preview" />
+  </ItemGroup>
+  
+</Project>
+```
+
+## Step 2: Add Semantic Kernel in Program.cs
+
+Open **Program.cs** and add the following code snippet right before var app = builder.Build():
     
-    ```csharp
-    // Configure AzureAIConfiguration 
-    builder.Services.AddSingleton(serviceProvider =>  
-        builder.Configuration.GetSection("AzureAIAgentConfiguration")); 
-    // Add the Semantic Kernel services 
-    builder.Services.AddKernel();
-    ```
+```
+// Configure AzureAIConfiguration 
+builder.Services.AddSingleton(serviceProvider =>  
+    builder.Configuration.GetSection("AzureAIAgentConfiguration")); 
+// Add the Semantic Kernel services 
+builder.Services.AddKernel();
+```
 
-1. Right-click to **ContosoHRAgent** project and select **Add > Class** and define your class name as **AzureAIAgentConfiguration.cs**. Copy the following lines inside your AzureAIAgentConfiguration public class:
+The updated Program.cs will look like below, make sure to save the changes before proceeding:
 
-    ```csharp
-    public string AgentId { get; set; } = string.Empty; 
-    public string ConnectionString { get; set; } = string.Empty; 
-    ```
+```
+using MyM365Agent1;
+using MyM365Agent1.Bot;
+using Microsoft.Agents.Hosting.AspNetCore;
+using Microsoft.Agents.Storage;
+using Microsoft.Agents.Builder;
+  
+var builder = WebApplication.CreateBuilder(args);
+  
+builder.Services.AddControllers();
+builder.Services.AddHttpClient("WebClient", client => client.Timeout = TimeSpan.FromSeconds(600));
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddCloudAdapter();
+builder.Logging.AddConsole();
+  
+// Add AspNet token validation
+builder.Services.AddBotAspNetAuthentication(builder.Configuration);
+  
+// Register IStorage.  For development, MemoryStorage is suitable.
+// For production Agents, persisted storage should be used so
+// that state survives Agent restarts, and operate correctly
+// in a cluster of Agent instances.
+builder.Services.AddSingleton<IStorage, MemoryStorage>();
+  
+// Add AgentApplicationOptions from config.
+builder.AddAgentApplicationOptions();
+  
+// Add the bot (which is transient)
+builder.AddAgent<EchoBot>();
+builder.Services.AddSingleton<IStorage, MemoryStorage>();
+  
+// Configure AzureAIConfiguration 
+builder.Services.AddSingleton(serviceProvider =>
+    builder.Configuration.GetSection("AzureAIAgentConfiguration"));
+// Add the Semantic Kernel services 
+builder.Services.AddKernel();
+  
+var app = builder.Build();
+  
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+  
+app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
+  
+// Map the /api/messages endpoint to the AgentApplication
+app.MapPost("/api/messages", async (HttpRequest request, HttpResponse response, IAgentHttpAdapter adapter, IAgent agent, CancellationToken cancellationToken) =>
+{
+    await adapter.ProcessAsync(request, response, agent, cancellationToken);
+});
+  
+if (app.Environment.IsDevelopment() || app.Environment.EnvironmentName == "Playground")
+{
+    app.MapGet("/", () => "Echo Agent");
+    app.UseDeveloperExceptionPage();
+    app.MapControllers().AllowAnonymous();
+}
+else
+{
+    app.MapControllers();
+}
+  
+app.Run();
+```
 
-1. Right-click to **ContosoHRAgent** project and select **Add > Class** and define your class name as **ConversationStateExtensions.cs**. Replace ConversationStateExtensions class with following:
+## Step 3: Create new classes for agent configuration and contersation state
 
-    ```csharp
-    public static class ConversationStateExtensions 
-    { 
-        public static int MessageCount(this ConversationState state) => state.GetValue<int>("countKey"); 
-        public static void MessageCount(this ConversationState state, int value) => state.SetValue("countKey", value); 
+Right-click to **ContosoHRAgent** project and select **Add > Class** and define your class name as +++AzureAIAgentConfiguration.cs+++. Replace the code with the following:
 
-        public static int IncrementMessageCount(this ConversationState state) 
-        { 
-            int count = state.GetValue<int>("countKey"); 
-            state.SetValue("countKey", ++count); 
-            return count; 
+```
+namespace ContosoHRAgent
+{
+    public class AzureAIAgentConfiguration
+    {
+        public string AgentId { get; set; } = string.Empty;
+        public string ConnectionString { get; set; } = string.Empty;
+    }
+}
+```
+
+Right-click to **ContosoHRAgent** project and select **Add > Class** and define your class name as +++ConversationStateExtensions.cs+++. Replace the code with following:
+
+```
+using Microsoft.Agents.Builder.State;
+  
+namespace ContosoHRAgent
+{
+    public static class ConversationStateExtensions
+    {
+        public static int MessageCount(this ConversationState state) => state.GetValue<int>("countKey");
+        public static void MessageCount(this ConversationState state, int value) => state.SetValue("countKey", value);
+  
+        public static int IncrementMessageCount(this ConversationState state)
+        {
+            int count = state.GetValue<int>("countKey");
+            state.SetValue("countKey", ++count);
+            return count;
         } 
-
-    } 
-    ```
+    }
+}
+```
 
 ## Step 2: Configure EchoBot with Azure AI Agent
 
