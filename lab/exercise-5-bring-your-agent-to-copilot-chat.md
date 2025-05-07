@@ -1,6 +1,6 @@
 # Exercise 5: Bring your agent to Copilot Chat
 
-Go to M365Agent/AppPackage/manifest.json, update the manifest schema and version as following: 
+Go to **M365Agent/AppPackage/manifest.json**, update the manifest schema and version as following: 
 
 ``` 
 "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.20/MicrosoftTeams.schema.json", 
@@ -51,8 +51,20 @@ Replace bots section with the following that will also add copilotAgents in the 
   }, 
 ```
 
-Hit **Start** or **F5** to start debugging. Microsoft Teams will launch automatically, and your agent app will pop up on the window. This time, you’ll also have Copilot icon in the launch. Select **Add** and select **Open with Copilot** to start chatting with your agent on Copilot. You can select one of the conversation starters to chat with your agent.
+Delete **build** folder under **M365Agent > AppPackage**, that will allow you to create a new app package with the new manifest changes.
 
-## Resources
+Hit **Start** or **F5** to start debugging. Microsoft Teams will launch automatically. Your agent will pop up on Teams, select **Add**. this time there will be an option to **Open with Copilot**, select Open with Copilot to test your agent on Copilot.
 
-- [Copilot Developer Camp](https://aka.ms/copilotdevcamp)
+![Copilot option](https://github.com/user-attachments/assets/97f9d9fd-bd90-48b5-983b-b1fea3f85721)
+
+You can select one of the conversation starters to chat with your agent.
+
+![agent on Copilot](https://github.com/user-attachments/assets/2aab299c-23ff-4369-a42c-bd74c66f854d)
+
+Observe that your agent responds back with a similar behavior on Copilot Chat.
+
+![image](https://github.com/user-attachments/assets/4211f43d-8aef-4262-95e3-1efac7dba495)
+
+## Next Step
+
+Select **Next >** to go to the next exercise Bring your agent to Copilot Chat.
