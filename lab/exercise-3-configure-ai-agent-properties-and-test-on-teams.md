@@ -1,4 +1,4 @@
-# Exercise 3: Configure agent properties with M365 Agents SDK
+# Exercise 3: Configure agent properties and test on Teams
 
 Let's configure agentic properties in your Echo Bot to transform it into a Generative AI-powered agent.
 
