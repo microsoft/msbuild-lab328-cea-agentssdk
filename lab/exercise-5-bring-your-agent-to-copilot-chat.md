@@ -1,4 +1,4 @@
-# Exercise 4: Bring your agent to Copilot Chat
+# Exercise 5: Bring your agent to Copilot Chat
 
 Go to M365Agent/AppPackage/manifest.json, update the manifest schema and version as following: 
 
