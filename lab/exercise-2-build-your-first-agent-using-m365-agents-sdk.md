@@ -18,6 +18,8 @@ To test your echo agent, hit **Start** or **F5**. This will launch Test Tool aut
 
 Type anything such as “Hi”, “Hello”. Observe that the agent echoes everything back.
 
+![Echo bot](https://github.com/user-attachments/assets/4562052d-856b-44d5-b2dd-27623d9bed11)
+
 ## Next Step
 
 Select **Next >** to go to the next exercise Integrate Azure AI Foundry agent with M365 Agents SDK.
