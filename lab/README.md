@@ -19,7 +19,8 @@ Now you're ready to complete the exercises in this lab. The lab includes multipl
 
 - Prepare your agent in Azure AI Foundry
 - Build your first agent using M365 Agents SDK
-- Integrate Azure AI Foundry agent with M365 Agents SDK
+- Configure AI agent properties with using M365 Agents SDK
+- Integrate Azure AI Foundry agent and test on Teams
 - Bring your agent to Copilot Chat
 
 The exercises are designed to be completed in order because they build on the data and resources created in the previous exercises, so make sure you complete each exercise before moving on to the next one.
@@ -38,15 +39,24 @@ Select **Next >** to go to the first exercise.
 
 ===
 
-!INSTRUCTIONS [Integrate Azure AI Foundry agent with M365 Agents SDK](https://raw.githubusercontent.com/microsoft/msbuild-lab328-cea-agentssdk/refs/heads/main/lab/exercise-3-integrate-azure-ai-foundry-agent-with-m365-agents-sdk.md)
+!INSTRUCTIONS [Configure AI agent properties and test on Teams](https://raw.githubusercontent.com/aycabas/msbuild-lab328-cea-agentssdk/refs/heads/main/lab/exercise-3-configure-ai-agent-properties-and-test-on-teams.md)
 
 ===
 
-!INSTRUCTIONS [Bring your agent to Copilot Chat](https://raw.githubusercontent.com/microsoft/msbuild-lab328-cea-agentssdk/refs/heads/main/lab/exercise-4-bring-your-agent-to-copilot-chat.md)
+!INSTRUCTIONS [Integrate Azure AI Foundry agent with M365 Agents SDK](https://raw.githubusercontent.com/aycabas/msbuild-lab328-cea-agentssdk/refs/heads/main/lab/exercise-4-integrate-azure-ai-foundry-agent-with-m365-agents-sdk.md)
+
+===
+
+!INSTRUCTIONS [Bring your agent to Copilot Chat](https://raw.githubusercontent.com/aycabas/msbuild-lab328-cea-agentssdk/refs/heads/main/lab/exercise-5-bring-your-agent-to-copilot-chat.md)
+
+===
+
+!INSTRUCTIONS [Wrap-Up](https://raw.githubusercontent.com/aycabas/msbuild-lab328-cea-agentssdk/refs/heads/main/lab/wrap-up.md)
+
 
 ## Discussions
 
-Use the Discussion page on this repository to ask any questions or continue the learning conversation!
+Use the Discussions page on this [repository](https://github.com/microsoft/msbuild-lab328-cea-agentssdk) to ask any questions or continue the learning conversation!
 
 ## Next Step
 
