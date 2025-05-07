@@ -45,17 +45,18 @@ Select **+ Add** in Knowledge section and select **Files**, then **Select local 
 
 ## Step 3: Test your agent in the playground
 
-1. In the Agent Playground, interact with your agent by entering prompts. You may use the examples listed below to test the agent’s response:
-    - +++What’s the difference between Northwind Standard and Health Plus when it comes to emergency and mental health coverage?+++
-    - +++Can I use PerksPlus to pay for both a rock climbing class and a virtual fitness program?+++
-    - +++If I hit my out-of-pocket max on Northwind Standard, do I still pay for prescriptions?+++
-    - +++What exactly happens during a Contoso performance review, and how should I prepare?+++
-    - +++Is a wellness spa weekend eligible under the PerksPlus reimbursement program?+++
-    - +++What are the key differences between the roles of COO and CFO at Contoso?+++
-    - +++How does the split copay work under Northwind Health Plus for office visits?+++
-    - +++Can I combine yoga class reimbursements from PerksPlus with services covered under my health plan?+++
-    - +++What values guide behavior and decision-making at Contoso Electronics?+++
-    - +++I’m seeing a non-participating provider — what costs should I expect under my current plan?+++
+In the Agent Playground, interact with your agent by entering prompts. You may use the examples listed below to test the agent’s response:
+
+- +++What’s the difference between Northwind Standard and Health Plus when it comes to emergency and mental health coverage?+++
+- +++Can I use PerksPlus to pay for both a rock climbing class and a virtual fitness program?+++
+- +++If I hit my out-of-pocket max on Northwind Standard, do I still pay for prescriptions?+++
+- +++What exactly happens during a Contoso performance review, and how should I prepare?+++
+- +++Is a wellness spa weekend eligible under the PerksPlus reimbursement program?+++
+- +++What are the key differences between the roles of COO and CFO at Contoso?+++
+- +++How does the split copay work under Northwind Health Plus for office visits?+++
+- +++Can I combine yoga class reimbursements from PerksPlus with services covered under my health plan?+++
+- +++What values guide behavior and decision-making at Contoso Electronics?+++
+- +++I’m seeing a non-participating provider — what costs should I expect under my current plan?+++
 
 Observe the agent's responses and adjust instructions or tools as needed to refine performance. Save the **Agent id** that'll be reuired in the next exercises.
 
