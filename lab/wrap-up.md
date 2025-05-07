@@ -19,7 +19,7 @@ In this lab, you learned how to:
 
 ## Resources
 
-- Copilot Developer Camp: https://aka.ms/copilotdevcamp
-- M365 Agents SDK docs: https://aka.ms/open-hack/m365agentssdk
-- Azure AI Foundry: https://ai.azure.com 
-- Learn more about Copilot extensibility: https://aka.ms/extensibility-docs
+- [Copilot Developer Camp](https://aka.ms/copilotdevcamp)
+- [M365 Agents SDK docs](https://aka.ms/open-hack/m365agentssdk)
+- [Azure AI Foundry](https://ai.azure.com)
+- [Learn more about Copilot extensibility](https://aka.ms/extensibility-docs)
