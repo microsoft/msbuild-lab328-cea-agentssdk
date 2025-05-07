@@ -19,7 +19,8 @@ Now you're ready to complete the exercises in this lab. The lab includes multipl
 
 - Prepare your agent in Azure AI Foundry
 - Build your first agent using M365 Agents SDK
-- Integrate Azure AI Foundry agent with M365 Agents SDK
+- Configure AI agent properties with using M365 Agents SDK
+- Integrate Azure AI Foundry agent and test on Teams
 - Bring your agent to Copilot Chat
 
 The exercises are designed to be completed in order because they build on the data and resources created in the previous exercises, so make sure you complete each exercise before moving on to the next one.
