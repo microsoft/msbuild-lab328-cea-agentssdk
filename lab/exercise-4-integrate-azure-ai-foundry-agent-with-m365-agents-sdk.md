@@ -147,6 +147,11 @@ You can ask one of the following questions to interact with the agent:
 * +++Can I use PerksPlus to pay for both a rock climbing class and a virtual fitness program?+++
 * +++If I hit my out-of-pocket max on Northwind Standard, do I still pay for prescriptions?+++
 
+You should observe that you are getting similar responses with the agent you've created on Azure AI Foundry.
+
+![Agent on Teams](https://github.com/user-attachments/assets/73ef491f-eaff-4743-bb2d-79a52a9ae301)
+
+
 ## Next Step
 
 Select **Next >** to go to the next exercise Bring your agent to Copilot Chat.
