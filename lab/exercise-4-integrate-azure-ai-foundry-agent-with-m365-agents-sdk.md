@@ -96,8 +96,9 @@ Open **M365Agent/env/.env.local**, add the following line:
   AZURE_AI_AGENT_ID=<AzureAIFoundryAgentId> 
   ```
 
-Replace the **<AzureAIFoundryAgentId>** with your Agent id that you saved in the previous exercises.
+Replace the **<AzureAIFoundryAgentId>** with your **Agent id** which can be found in **Agents Playground**.
 
+![Agents Playground](https://github.com/user-attachments/assets/13421287-d476-41c4-88df-bed1bff2f2f8)
 
 Open **TeamsApp/env/.env.local.user** and add the following line:
 
@@ -105,27 +106,31 @@ Open **TeamsApp/env/.env.local.user** and add the following line:
   SECRET_AZURE_AI_PROJECT_CONNECTION_STRING=<AzureAIFoundryProjectConnectionString> 
   ```
 
-Replace **<AzureAIFoundryProjectConnectionString>** with your AI Foundry project connection string which can be found in the **Overview** page of the AI Foundry.
+Replace **<AzureAIFoundryProjectConnectionString>** with your AI Foundry project connection string which can be found in the **Overview** page of the AI Foundry, under the Project details.
 
 ![Connection String](https://github.com/user-attachments/assets/d2e59830-11bd-48ae-9bfc-fff2999cf5f2)
 
 
 ## Step 3: Test your agent on Teams
 
-**Open Tools > Command Line > Developer Command Prompt** and run:
+Open **Tools > Command Line > Developer Command Prompt** and run:
 
-  ```powershell
+  ```
   az login 
   ```
 
 A window will pop up on your browser and you'll need to sign into your Microsoft account to successfully complete az login. Use the following credentials to sign in:
-    - **Email**: +++@lab.CloudPortalCredential(User1).Username+++
-    - **Password**: +++@lab.CloudPortalCredential(User1).Password+++
+* **Email**: +++@lab.CloudPortalCredential(User1).Username+++
+* **Password**: +++@lab.CloudPortalCredential(User1).Password+++
 
-Right click to **M365Agent** project, select **Microsoft 365 Agents Toolkit > Microsoft 365 Account**. Select **Sign in** and **Work or school account**. Login with the same credentials as above, then **Continue**.
+Right click to **M365Agent** project, select **Microsoft 365 Agents Toolkit > Microsoft 365 Account**.
 
 ![M365 Agents Toolkit](https://github.com/user-attachments/assets/6981343d-8668-4b33-b36f-63b12739fc9d)
 
+Select **Sign in** and **Work or school account**. Login with the same credentials, then **Continue**:
+* **Email**: +++@lab.CloudPortalCredential(User1).Username+++
+* **Password**: +++@lab.CloudPortalCredential(User1).Password+++
+  
 Expand **<Multiple Startup Projects>** on top of Visual Studio and Select **Microsoft Teams (browser)**.
 
 ![Teams Browser](https://github.com/user-attachments/assets/0f564f0a-0394-49de-a679-6be59761b4fb)
@@ -139,7 +144,7 @@ Expand **Start** and select **Dev Tunnels > Create a Tunnel**.
 ![Dev Tunnel](https://github.com/user-attachments/assets/146fb3d4-256d-48b3-95a1-9e285f6bbc08)
 
 
-Once Dev Tunnel is created, hit **Start** or **F5** to start debugging. Microsoft Teams will launch automatically, and your agent app will pop up on the window. Select Add and start chatting with your agent.  
+Once Dev Tunnel is created, hit **Start** or **F5** to start debugging. Microsoft Teams will launch automatically, and your agent app will pop up on the window. Select **Add** and **Open** to start chatting with your agent.  
 
 You can ask one of the following questions to interact with the agent:
 
