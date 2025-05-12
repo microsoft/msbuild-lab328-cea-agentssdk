@@ -223,26 +223,25 @@ A window will pop up on your browser and you'll need to sign into your Microsoft
 * **Email**: +++@lab.CloudPortalCredential(User1).Username+++
 * **Password**: +++@lab.CloudPortalCredential(User1).Password+++
 
+Expand **Start** and select **Dev Tunnels > Create a Tunnel**.  
+  * Select **Sign in** and **Work or school account**. Login with the same credentials mentioned above.
+  * Provide a name for your tunnel such as +++DevTunnel+++.
+  * Keep the Tunnel Type **Temporary**.
+  * Select Access as **Public** and then **Create**.
+
+![Dev Tunnel](https://github.com/user-attachments/assets/146fb3d4-256d-48b3-95a1-9e285f6bbc08)
+
 Right click to **M365Agent** project, select **Microsoft 365 Agents Toolkit > Microsoft 365 Account**.
 
 ![M365 Agents Toolkit](https://github.com/user-attachments/assets/6981343d-8668-4b33-b36f-63b12739fc9d)
 
-Select **Sign in** and **Work or school account**. Login with the same credentials, then **Continue**:
+If your account doesn't show up automatically, select **Sign in** and **Work or school account**. Login with the same credentials, then **Continue**:
 * **Email**: +++@lab.CloudPortalCredential(User1).Username+++
 * **Password**: +++@lab.CloudPortalCredential(User1).Password+++
   
 Expand **<Multiple Startup Projects>** on top of Visual Studio and Select **Microsoft Teams (browser)**.
 
 ![Teams Browser](https://github.com/user-attachments/assets/0f564f0a-0394-49de-a679-6be59761b4fb)
-
-Expand **Start** and select **Dev Tunnels > Create a Tunnel**.  
-  * Select Account and login with Microsoft credentials.
-  * Provide a name for your tunnel such as *DevTunnel*.
-  * Keep the Tunnel Type **Temporary**.
-  * Select Access as **Public** and then **Create**.
-
-![Dev Tunnel](https://github.com/user-attachments/assets/146fb3d4-256d-48b3-95a1-9e285f6bbc08)
-
 
 Once Dev Tunnel is created, hit **Start** or **F5** to start debugging. Microsoft Teams will launch automatically, and your agent app will pop up on the window. Select **Add** and **Open** to start chatting with your agent.  
 
