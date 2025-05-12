@@ -10,8 +10,6 @@ Right-click to **ContosoHRAgent** project and select **Edit Project File**, repl
   <ItemGroup>
 	<PackageReference Include="Microsoft.Agents.Authentication.Msal" Version="1.1.40-beta" />
 	<PackageReference Include="Microsoft.Agents.Hosting.AspNetCore" Version="1.1.40-beta" />
-	<PackageReference Include="Azure.AI.Projects" Version="1.0.0-beta.8" />
-	<PackageReference Include="Azure.Identity" Version="1.14.0-beta.3" />
 	<PackageReference Include="Microsoft.SemanticKernel.Agents.AzureAI" Version="1.49.0-preview" />
   </ItemGroup>
 ```
