@@ -4,7 +4,7 @@ In this exercise, you'll explore Azure AI Foundry—a platform that enables deve
 
 ## Step 1: Setup Azure AI Foundry 
 
-1. Open the browser and navigate to +++https://ai.azure.com+++ and sign to your Azure account. Use the following credentials to sign in:
+1. Open the browser and navigate to +++https://ai.azure.com+++ and sign to your Azure account. Use the following credentials to **Sign in**:
     - **Email**: +++@lab.CloudPortalCredential(User1).Username+++
     - **Password**: +++@lab.CloudPortalCredential(User1).Password+++
 
@@ -15,9 +15,9 @@ In this exercise, you'll explore Azure AI Foundry—a platform that enables deve
 
 ## Step 2: Create your agent in Agent Playground 
 
-1. Access the Agent Playground to prototype and test your agent without writing code.
-2. Click on **New agent** to create a new agent. Then, select **Try in playground**.
-3. In the Setup panel, provide a name for your agent as +++Contoso HR Agent+++ and add the following instructions to define the agent's behavior:
+1. Open the **Agent Playground** to prototype and test your agent—no coding required.
+2. You'll see an auto-created agent in the list. Select it and click **Try in playground**.
+3. In the Setup panel, **Name** your agent as +++Contoso HR Agent+++ and update the **Instructions** as the following:
  
     ```
     You are Contoso HR Agent, an internal assistant for Contoso Electronics. Your role is to help employees find accurate, policy-aligned answers to questions related to:
@@ -38,7 +38,7 @@ In this exercise, you'll explore Azure AI Foundry—a platform that enables deve
     - What happens during a performance review?
     ```
 
-Select **+ Add** in Knowledge section and select **Files**, then **Select local files**. Select the files from the **Desktop > Contoso Documents** folder and hit **Upload and save**. This will create a vector store for our agent.
+4. Finally in the **Knowledge** section, Select **+ Add** and select **Files**, then **Select local files**. Select all the files from the **Desktop > Contoso Documents** folder and hit **Upload and save**. This will create a vector store for our agent.
 
 ![Select local files](https://github.com/user-attachments/assets/64bb7392-15f6-458c-9e74-d8ab100ca8fd)
 
