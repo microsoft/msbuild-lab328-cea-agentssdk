@@ -36,8 +36,8 @@ Replace bots section with the following that will also add copilotAgents in the 
               "description": "Can I use PerksPlus to pay for both a rock climbing class and a virtual fitness program?" 
             }, 
             { 
-              "title": "Contoso performance review", 
-              "description": "What exactly happens during a Contoso performance review, and how should I prepare?" 
+              "title": "Contoso Electronics Values", 
+              "description": "What values guide behavior and decision making at Contoso Electronics?" 
             } 
           ] 
         } 
