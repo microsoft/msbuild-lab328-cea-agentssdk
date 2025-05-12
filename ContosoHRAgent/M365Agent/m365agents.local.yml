@@ -44,11 +44,7 @@ provision:
               AuthorityEndpoint: "https://login.microsoftonline.com/botframework.com"
               ClientId: ${{BOT_ID}}
               ClientSecret: ${{SECRET_BOT_PASSWORD}}
-        AzureAIAgentConfiguration:
-          AgentId: ${{AZURE_AI_AGENT_ID}}
-          ConnectionString: ${{SECRET_AZURE_AI_PROJECT_CONNECTION_STRING}}
-
-
+            
   # Create or update the bot registration on dev.botframework.com
   - uses: botFramework/create
     with:

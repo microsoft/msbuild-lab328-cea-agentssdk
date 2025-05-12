@@ -28,11 +28,6 @@ builder.AddAgentApplicationOptions();
 builder.AddAgent<EchoBot>();
 builder.Services.AddSingleton<IStorage, MemoryStorage>();
 
-// Configure AzureAIConfiguration 
-
-builder.Services.AddSingleton(serviceProvider =>
-    builder.Configuration.GetSection("AzureAIAgentConfiguration"));
-
 // Add the Semantic Kernel services 
 
 builder.Services.AddKernel();
