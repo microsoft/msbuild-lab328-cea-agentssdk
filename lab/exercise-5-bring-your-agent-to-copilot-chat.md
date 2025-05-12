@@ -1,5 +1,8 @@
 # Exercise 5: Bring your agent to Copilot Chat
 
+> [!TIP]
+> Close the previous debugging session before proceeding with this exercise.
+
 Go to **M365Agent/AppPackage/manifest.json**, update the manifest schema and version as following: 
 
 ``` 
@@ -33,8 +36,8 @@ Replace bots section with the following that will also add copilotAgents in the 
               "description": "Can I use PerksPlus to pay for both a rock climbing class and a virtual fitness program?" 
             }, 
             { 
-              "title": "Contoso performance review", 
-              "description": "What exactly happens during a Contoso performance review, and how should I prepare?" 
+              "title": "Contoso Electronics Values", 
+              "description": "What values guide behavior and decision making at Contoso Electronics?" 
             } 
           ] 
         } 
@@ -53,7 +56,11 @@ Replace bots section with the following that will also add copilotAgents in the 
 
 Delete **build** folder under **M365Agent > AppPackage**, that will allow you to create a new app package with the new manifest changes.
 
-Hit **Start** or **F5** to start debugging. Microsoft Teams will launch automatically. Your agent will pop up on Teams, select **Add**. this time there will be an option to **Open with Copilot**, select Open with Copilot to test your agent on Copilot.
+Hit **Start** or **F5** to start debugging. Microsoft Teams will launch automatically. When Microsoft Teams open in your browser, ignore the app pop-up and select **Apps > Manage your apps > Upload an app**. In your files go to +++C:\Users\LabUser\source\repos\ContosoHRAgent\M365Agent\appPackage\build+++ select **appPackage.local**.
+
+![Upload app](https://github.com/user-attachments/assets/5fad723f-b087-4481-8c8c-d5ad87c1bead)
+
+This will pop-up your app on Teams, select Add. This time there will be an option to **Open with Copilot**, select **Open with Copilot** to test your agent on Copilot.
 
 ![Copilot option](https://github.com/user-attachments/assets/97f9d9fd-bd90-48b5-983b-b1fea3f85721)
 

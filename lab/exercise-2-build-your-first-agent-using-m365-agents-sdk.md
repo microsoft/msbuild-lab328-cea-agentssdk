@@ -2,7 +2,7 @@
 
 This exercise introduces you to the Microsoft 365 Agents SDK and Microsoft 365 Agents Toolkit for building enterprise-grade, scalable, multi-channel agents. You'll learn how to create a new agent project with Visual Studio and test it within Test Tool. This experience will demonstrate how to integrate agent capabilities into Microsoft 365 apps and Copilot Chat effectively.
 
-## Step 1: Create your echo agent using Visual Studio
+## Step 1: Create an echo bot using Visual Studio
 
 1. Open Visual Studio 2022 and select **Create a new project**.
 1. Search and select **Microsoft 365 Agents**.
