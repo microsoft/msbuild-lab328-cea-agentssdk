@@ -45,7 +45,7 @@ In this exercise, you'll explore Azure AI Foundry—a platform that enables deve
 
 ## Step 3: Test your agent in the playground
 
-In the Agent Playground, interact with your agent by entering prompts. You may use the examples listed below to test the agent’s response:
+In the Agent Playground, interact with your agent by entering prompts and observe the agent's responses, adjust instructions or tools as needed to refine performance. You may use the examples listed below to test the agent’s response:
 
 - +++What’s the difference between Northwind Standard and Health Plus when it comes to emergency and mental health coverage?+++
 - +++Can I use PerksPlus to pay for both a rock climbing class and a virtual fitness program?+++
@@ -58,9 +58,10 @@ In the Agent Playground, interact with your agent by entering prompts. You may u
 - +++What values guide behavior and decision-making at Contoso Electronics?+++
 - +++I’m seeing a non-participating provider — what costs should I expect under my current plan?+++
 
-Observe the agent's responses and adjust instructions or tools as needed to refine performance. Save the **Agent id** that'll be reuired in the next exercises.
-
-![Agents Playground](https://github.com/user-attachments/assets/13421287-d476-41c4-88df-bed1bff2f2f8)
+> [!TIP]
+> Save the **Agent id** that'll be required in the next exercises.
+> 
+> ![Agents Playground](https://github.com/user-attachments/assets/13421287-d476-41c4-88df-bed1bff2f2f8)
 
 ## Next Step
 
