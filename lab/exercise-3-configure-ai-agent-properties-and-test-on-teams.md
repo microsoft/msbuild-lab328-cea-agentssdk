@@ -2,7 +2,7 @@
 
 Let's configure agentic properties in your Echo Bot to transform it into a Generative AI-powered agent.
 
-## Step 1: Update Project file with the new packages
+## Step 1: Update Project file with new packages
 
 Right-click to **ContosoHRAgent** project and select **Edit Project File**, then add the following packages to in the list of ItemGroup that includes **PackageReference**:
 
@@ -117,7 +117,7 @@ app.Run();
 
 ## Step 3: Create new classes for agent configuration and contersation state
 
-Right-click to **ContosoHRAgent** project and select **Add > Class** and define your class name as +++AzureAIAgentConfiguration.cs+++. Replace the code with the following:
+Right-click to **ContosoHRAgent** project and select **Add > Class** and define your class name as +++AzureAIAgentConfiguration.cs+++. Replace the existing code with the following:
 
 ```
 namespace ContosoHRAgent
@@ -130,7 +130,7 @@ namespace ContosoHRAgent
 }
 ```
 
-Right-click to **ContosoHRAgent** project and select **Add > Class** and define your class name as +++ConversationStateExtensions.cs+++. Replace the code with following:
+Right-click to **ContosoHRAgent** project and select **Add > Class** and define your class name as +++ConversationStateExtensions.cs+++. Replace existing the code with following:
 
 ```
 using Microsoft.Agents.Builder.State;
