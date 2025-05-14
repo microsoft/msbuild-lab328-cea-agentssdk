@@ -8,10 +8,10 @@ In this exercise, you'll explore Azure AI Foundry—a platform that enables deve
     - **Email**: +++@lab.CloudPortalCredential(User1).Username+++
     - **Password**: +++@lab.CloudPortalCredential(User1).Password+++
 
-2. From the Azure AI Foundry homepage, select **Create a project**. Keep all the settings suggested and select **Create**. (It can take about 2-3 minutes to get all the resources created for the project.)
-3. Within your project, extend the left side panel and navigate to the **Agents** section under "Build and customize".
-4. Select your Azure OpenAI resource and select **Let’s go**.
-5. In the Deploy a model window, search and select **gpt-4o**, then **Confirm**. Keep the deployment details as suggested and select **Deploy**.
+2. From the Azure AI Foundry homepage, select **Create an agent**.
+3. Keep the name as suggested and select **Create**. (It can take about 2-3 minutes to get all the resources created for the project.)
+4. When the agent is created successfully, you'll be redirected to the window pop-up to select and deploy models. Select **gpt-4o** and **Confirm**.
+5. Leave all the Deployment settings as suggested and select **Deploy**.
 
 ## Step 2: Create your agent in Agent Playground 
 
