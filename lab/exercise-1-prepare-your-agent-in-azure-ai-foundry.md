@@ -8,16 +8,15 @@ In this exercise, you'll explore Azure AI Foundry—a platform that enables deve
     - **Email**: +++@lab.CloudPortalCredential(User1).Username+++
     - **Password**: +++@lab.CloudPortalCredential(User1).Password+++
 
-2. From the Azure AI Foundry homepage, select **Create a project**. Keep all the settings suggested and select **Create**. (It can take about 2-3 minutes to get all the resources created for the project.)
-3. Within your project, extend the left side panel and navigate to the **Agents** section under "Build and customize".
-4. Select your Azure OpenAI resource and select **Let’s go**.
-5. In the Deploy a model window, search and select **gpt-4o**, then **Confirm**. Keep the deployment details as suggested and select **Deploy**.
+2. From the Azure AI Foundry homepage, select **Create an agent**.
+3. Keep the name as suggested and select **Create**. (It can take about 2-3 minutes to get all the resources created for the project.)
+4. When the agent is created successfully, you'll be redirected to the window pop-up to select and deploy models. Select **gpt-4o** and **Confirm**.
+5. Leave all the Deployment settings as suggested and select **Deploy**.
+6. Once your model is deployed, you'll be redirected to your agent on the **Agent Playground**.
 
-## Step 2: Create your agent in Agent Playground 
+## Step 2: Customize your agent in Agent Playground 
 
-1. Open the **Agent Playground** to prototype and test your agent—no coding required.
-2. You'll see an auto-created agent in the list. Select it and click **Try in playground**.
-3. In the Setup panel, **Name** your agent as +++Contoso HR Agent+++ and update the **Instructions** as the following:
+1. In the **Agent Playground** Setup panel, **Name** your agent as +++Contoso HR Agent+++ and update the **Instructions** as the following:
  
     ```
     You are Contoso HR Agent, an internal assistant for Contoso Electronics. Your role is to help employees find accurate, policy-aligned answers to questions related to:
@@ -38,7 +37,7 @@ In this exercise, you'll explore Azure AI Foundry—a platform that enables deve
     - What happens during a performance review?
     ```
 
-4. Finally in the **Knowledge** section, Select **+ Add** and select **Files**, then **Select local files**. Select all the files from the **Desktop > Contoso Documents** folder and hit **Upload and save**. This will create a vector store for our agent.
+2. Finally in the **Knowledge** section, Select **+ Add** and select **Files**, then **Select local files**. Select all the files from the **Desktop > Contoso Documents** folder and hit **Upload and save**. This will create a vector store for our agent.
 
 ![Select local files](https://github.com/user-attachments/assets/64bb7392-15f6-458c-9e74-d8ab100ca8fd)
 
