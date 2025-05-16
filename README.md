@@ -1,4 +1,8 @@
-# Project
+<p align="center">
+<img src="img/banner.jpg" alt="decorative banner" width="1200"/>
+</p>
+
+# Build25 LAB328 - Build custom engine agents using Microsoft 365 Agents SDK
 
 > This repo has been populated by an initial template to help get you started. Please
 > make sure to update the content to build a great experience for community-building.
@@ -9,6 +13,13 @@ As the maintainer of this project, please make a few updates:
 - Updating SUPPORT.MD with content about this project's support experience
 - Understanding the security reporting process in SECURITY.MD
 - Remove this section from the README
+
+## Session Resources 
+
+| Resources          | Links                             | Description        |
+|:-------------------|:----------------------------------|:-------------------|
+| Build session page | https://build.microsoft.com/sessions/LAB328 | Event session page with downloadable recording, slides, resources, and speaker bio |
+|Microsoft Learn|https://aka.ms/Plan_Copilot5|Official Collection or Plan with skilling resources to learn at your own pace|**
 
 ## Contributing
 
