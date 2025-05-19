@@ -49,8 +49,11 @@ Now that you're inside the Agents Playground, you'll customize your agent's iden
 
 2. Finally in the **Knowledge** section, Select **+ Add** and select **Files**, then **Select local files**. Select all the files from the **Desktop > Contoso Documents** folder and hit **Upload and save**. This will create a vector store for our agent.
 
+> When you upload documents, Foundry automatically converts them into vectors, a format that allows the agent to search and retrieve relevant information efficiently.
+
 ![Select local files](https://github.com/user-attachments/assets/64bb7392-15f6-458c-9e74-d8ab100ca8fd)
 
+By customizing the instructions and uploading relevant documents, you're teaching the agent how to behave and what knowledge to rely on. This is a simplified form of Retrieval-Augmented Generation (RAG).
 
 ## Step 3: Test your agent in the playground
 
@@ -70,7 +73,7 @@ In the Agent Playground, interact with your agent by entering prompts and observ
 - +++I’m seeing a non-participating provider — what costs should I expect under my current plan?+++
 
 > [!TIP]
-> Save the **Agent id** that'll be required in the next exercises.
+> Save the **Agent id** that'll be required in the next exercises. You can find your Agent id in the agent’s details panel.
 > 
 > ![Agents Playground](https://github.com/user-attachments/assets/13421287-d476-41c4-88df-bed1bff2f2f8)
 
