@@ -1,8 +1,10 @@
 # Exercise 4: Integrate Azure AI Foundry Agent with M365 Agents SDK
 
-In this exercise, you'll integrate your agent with the Azure AI Foundry agent that you've created in previous exercises.
+You’ve built an agent using the M365 Agents SDK and configured it with generative AI capabilities. Now, you’ll connect this local agent to the Azure AI Foundry agent you created earlier. This enables your agent to respond using enterprise data and instructions stored in the Foundry project, bringing everything full circle.
 
-## Step 1: Update EchoBot.cs with Azure AI Agent Connection
+## Step 1: Configure EchoBot.cs to Connect with Azure AI Foundry Agent
+
+In this step, you’ll connect to the Azure AI Foundry agent by adding a client to fetch and invoke your Foundry-hosted model inside the EchoBot.cs.
 
 In **ContosoHRAgent** project, open **Bot/EchoBot.cs** and add the following lines inside the EchoBot public class: 
 
@@ -40,9 +42,9 @@ Replace the existing EchoBot constructor with the following:
   }
   ```
 
-**AzureAIAgent** may cause an error in this step. Right-click to AzureAIAgent and select **Quick Actions and Refactorings > Suppress or configure issues > Configure SKEXP0110 Severity > Silent**.
-
-![Warning](https://github.com/user-attachments/assets/3dc267c0-c3b6-4436-9dc6-09157f9a8b5b)
+> **⚠️ Note:** You might see a warning (SKEXP0110) because this feature is still in preview. You can safely suppress this warning for now by right-clicking on AzureAIAgent, selecting **Quick Actions and Refactorings > Suppress or configure issues > Configure SKEXP0110 Severity > Silent**.
+> 
+> ![Warning](https://github.com/user-attachments/assets/3dc267c0-c3b6-4436-9dc6-09157f9a8b5b)
 
 Replace **OnMessageAsync** method with the following:
 
@@ -141,9 +143,17 @@ Replace **OnMessageAsync** method with the following:
 }
 ```
 
+> **Summary:** What happens in OnMessageAsync?
+> 
+> The *OnMessageAsync* method is the heart of your agent’s response logic. By replacing the default echo behavior, you’ve enabled your agent to:
+> * Send the user’s message to your Azure AI Foundry agent
+> * Stream the response back to the user in real time
+> * Track and attach citations and file references for transparency
+> * Add sensitivity and AI-generated labels for security and traceability
+
 ## Step 2: Configure Azure AI Agent Service Keys
 
-In **ContosoHRAgent** project, open **appsettings.json** and add the following lines at the bottom of the appsettings list:
+Add your Foundry connection details to appsettings.json, these values connect your M365 agent to the correct Foundry project and agent. In **ContosoHRAgent** project, open **appsettings.json** and add the following lines at the bottom of the appsettings list:
 
 ```
 ,
@@ -152,6 +162,8 @@ In **ContosoHRAgent** project, open **appsettings.json** and add the following l
     "AgentID": "<AzureAIFoundryAgentId>"
   }
 ```
+
+> You can find these values in the **Overview** and **Agents Playground** sections of Azure AI Foundry.
 
 Replace the **<AzureAIFoundryAgentId>** with your **Agent id** which can be found in **Agents Playground**.
 
@@ -242,6 +254,8 @@ If your account doesn't show up automatically, select **Sign in** and **Work or 
 Expand **<Multiple Startup Projects>** on top of Visual Studio and Select **Microsoft Teams (browser)**.
 
 ![Teams Browser](https://github.com/user-attachments/assets/0f564f0a-0394-49de-a679-6be59761b4fb)
+
+You're now ready to run your integrated agent and test it live in Microsoft Teams. Make sure your dev tunnel is created and your account is authenticated.
 
 Once Dev Tunnel is created, hit **Start** or **F5** to start debugging. Microsoft Teams will launch automatically, and your agent app will pop up on the window. Select **Add** and **Open** to start chatting with your agent.  
 
