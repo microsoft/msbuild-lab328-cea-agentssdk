@@ -10,8 +10,6 @@ In this lab, you learned how to:
 * Integrate your bot with the Azure AI Foundry agent for real-time, grounded reasoning
 * Deploy and test your agent in **Microsoft Teams** and **Copilot Chat**
 
-
-
 ## Next Steps
 
 * Customize your agent’s tone, instructions, or capabilities
