@@ -58,12 +58,7 @@ Replace bots section with the following that will also add copilotAgents in the 
   }, 
 ```
 
-Delete **build** folder under **M365Agent > AppPackage**, that will allow you to create a new app package with the new manifest changes.
-
-Hit **Start** or **F5** to start debugging. Microsoft Teams will launch automatically. 
-
-> [!TIP]
-> When Microsoft Teams open in your browser, ignore the app pop-up and select **Apps > Manage your apps > Upload an app**. In your files go to +++C:\Users\LabUser\source\repos\ContosoHRAgent\M365Agent\appPackage\build+++ select **appPackage.local**.
+Hit **Start** or **F5** to start debugging. Microsoft Teams will launch automatically. When Microsoft Teams open in your browser, ignore the app pop-up and select **Apps > Manage your apps > Upload an app**. In the File Explorer go to +++C:\Users\LabUser\source\repos\ContosoHRAgent\M365Agent\appPackage\build+++ select **appPackage.local**.
 > 
 >![Upload app](https://github.com/user-attachments/assets/5fad723f-b087-4481-8c8c-d5ad87c1bead)
 
@@ -71,7 +66,14 @@ Your app will pop-up on Teams again, select **Add**. This time there will be an 
 
 ![Copilot option](https://github.com/user-attachments/assets/97f9d9fd-bd90-48b5-983b-b1fea3f85721)
 
-You can select one of the conversation starters to chat with your agent.
+>[!TIP]
+> If you see *Copilot is not currently supported in this region*, then go to +++**https://m365.microsoft.cloud**+++ that will open Microsoft 365 Copilot in your browser. Sign in with the credentials below:
+> * **Email**: +++@lab.CloudPortalCredential(User1).Username+++
+> * **Password**: +++@lab.CloudPortalCredential(User1).Password+++
+>
+> <img width="1004" alt="Copilot error" src="https://github.com/user-attachments/assets/e079360f-9854-46c8-92c9-ef685547ea36" />
+
+Select your **ContosoHRAgentlocal** from the list of agents in Copilot Chat. You can select one of the conversation starters to chat with your agent.
 
 ![agent on Copilot](https://github.com/user-attachments/assets/2aab299c-23ff-4369-a42c-bd74c66f854d)
 

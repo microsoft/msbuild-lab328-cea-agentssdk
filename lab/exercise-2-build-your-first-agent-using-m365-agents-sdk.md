@@ -20,7 +20,7 @@ You've started with an **Echo Bot**, a simple bot that repeats back any message 
 
 To test your echo agent, hit **Start** or **F5**. This will launch Test Tool automatically in localhost where you can interact with your agent.
 
-Type anything such as “Hi”, “Hello”. Observe that the agent echoes everything back.
+Wait until the agent's meesage "Hello and Welcome!", then type anything such as “Hi”, “Hello”. Observe that the agent echoes everything back.
 
 ![Echo bot](https://github.com/user-attachments/assets/4562052d-856b-44d5-b2dd-27623d9bed11)
 
