@@ -4,6 +4,8 @@ This exercise introduces you to the Microsoft 365 Agents SDK and Microsoft 365 A
 
 ## Step 1: Create an echo bot using Visual Studio
 
+Now that you’ve seen how to build an agent using Azure AI Foundry, let’s switch gears and explore how to build your own agent locally using the Microsoft 365 Agents SDK. This SDK lets you build multi-channel, production-ready agents that can run in Microsoft Teams, Microsoft 365 Copilot, and other preferred channels.
+
 1. Open Visual Studio 2022 and select **Create a new project**.
 1. Search and select **Microsoft 365 Agents**.
 1. Provide a name for your agent as `ContosoHRAgent` and select **Create**.  
@@ -11,6 +13,8 @@ This exercise introduces you to the Microsoft 365 Agents SDK and Microsoft 365 A
 1. When the project template is scaffolded, go to Solution Explorer on the right-side panel and explore the agent template.
     - Open **Program.cs**, this code configures and runs the web server that hosts your agent. It sets up required services like authentication, routing, storage and registers the **EchoBot** and injects memory-based state handling.
     - Open **Bot > EchoBot.cs** and observe that this sample sets up a basic AI agent using the **Microsoft.Agents.Builder**. It sends a welcome message when a user joins the chat and listens for any message and echoes it back with a running message count.
+
+You've started with an **Echo Bot**, a simple bot that repeats back any message a user sends. It’s a useful way to verify your setup and understand how conversations are handled behind the scenes.
 
 ## Step 2: Test your agent in Test Tool
 
@@ -21,5 +25,7 @@ Type anything such as “Hi”, “Hello”. Observe that the agent echoes every
 ![Echo bot](https://github.com/user-attachments/assets/4562052d-856b-44d5-b2dd-27623d9bed11)
 
 ## Next Step
+
+This simple agent forms the base for more powerful experiences. In the next step, you'll combine this with your Azure AI Foundry agent to enable richer, context-aware answers.
 
 Select **Next >** to go to the next exercise Integrate Azure AI Foundry agent with M365 Agents SDK.

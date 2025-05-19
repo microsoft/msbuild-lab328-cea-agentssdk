@@ -1,5 +1,7 @@
 # Exercise 5: Bring your agent to Copilot Chat
 
+In this final exercise, you’ll bring your custom engine agent into Copilot Chat by updating the agent's manifest. By enabling copilotAgents in the app manifest, you’ll make your AI-powered assistant available directly inside the Copilot experience.
+
 > [!TIP]
 > Close the previous debugging session before proceeding with this exercise.
 
@@ -11,6 +13,8 @@ Go to **M365Agent/AppPackage/manifest.json**, update the manifest schema and ver
 ```
 
 Replace bots section with the following that will also add copilotAgents in the manifest:
+
+> This block declares your agent as a custom engine agent for M365 Copilot. It tells Microsoft 365 to expose this agent in Copilot Chat and surface its command list in the conversation UI along with the conversation starters to help users get started quickly.
 
 ```   
   "bots": [ 
@@ -77,4 +81,6 @@ Observe that your agent responds back with a similar behavior on Copilot Chat.
 
 ## Next Step
 
-Select **Next >** to go to the next exercise Bring your agent to Copilot Chat.
+✅ You’ve successfully brought your AI-powered agent to M365 Copilot Chat!
+
+Select **Next >** to explore resources and more.

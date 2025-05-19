@@ -1,22 +1,32 @@
 # Exercise 1: Prepare your agent in Azure AI Foundry
 
-In this exercise, you'll explore Azure AI Foundry—a platform that enables developers to build, deploy, and scale AI agents with ease. You'll learn how to create a new project, configure an agent, and test its functionality using the Agent Playground. This hands-on experience will provide insight into the capabilities of Azure AI Agent Service and how it integrates with various AI models and tools. 
+In this exercise, you'll explore Azure AI Foundry, a platform that enables developers to build, deploy, and scale AI agents with ease. You'll learn how to configure an agent, and test its functionality using the Agents Playground. This hands-on experience will provide insight into the capabilities of Azure AI Agent Service and how it integrates with various AI models and tools. 
 
-## Step 1: Setup Azure AI Foundry 
+## Step 1: Get started with Azure AI Foundry 
+
+Azure AI Foundry is your launchpad for building AI agents. In this step, you’ll log in and locate your preconfigured project so you can explore what’s already set up.
 
 1. Open the browser and navigate to +++https://ai.azure.com+++ and sign to your Azure account. Use the following credentials to **Sign in**:
     - **Email**: +++@lab.CloudPortalCredential(User1).Username+++
     - **Password**: +++@lab.CloudPortalCredential(User1).Password+++
 
-2. From the Azure AI Foundry homepage, select **Create an agent**.
-3. Keep the name as suggested and select **Create**. (It can take about 2-3 minutes to get all the resources created for the project.)
-4. When the agent is created successfully, you'll be redirected to the window pop-up to select and deploy models. Select **gpt-4o** and **Confirm**.
-5. Leave all the Deployment settings as suggested and select **Deploy**.
-6. Once your model is deployed, you'll be redirected to your agent on the **Agent Playground**.
+2. From the Azure AI Foundry homepage, select the pre-polulated project in the list. This will direct you to the Azure AI Foundry project page.
+    <img width="1004" alt="Project in foundry" src="https://github.com/user-attachments/assets/948bca8e-c087-41f2-890f-5ff7ac66c297" />
+
+3. Once you are in your project, extend the left side bar and select **Agents**. This will open the Agents Playground. Select the OpenAI model from the dropdown list and select **Let's go**.
+    <img width="1004" alt="AI Foundry" src="https://github.com/user-attachments/assets/7d17b20b-3ed0-49fa-9795-e917de869074" />
+
+4. Once you are in the **Agents Playground**, you'll recognize there is a pre-populated agent for you in the list. Select the agent and select **Try in playground**.
+    <img width="1029" alt="Agents Playground" src="https://github.com/user-attachments/assets/dd481101-c15d-4aed-af62-aeb7d3c8e5ed" />
+
+> [!TIP]
+> If you don't see the agent side bar with **Try in playground** option when you click on the agent, extend the blowser size on your screen until it shows up on the right side.
 
 ## Step 2: Customize your agent in Agent Playground 
 
-1. In the **Agent Playground** Setup panel, **Name** your agent as +++Contoso HR Agent+++ and update the **Instructions** as the following:
+Now that you're inside the Agents Playground, you'll customize your agent's identity and behavior to match a real-world scenario: an internal HR Agent at Contoso.
+
+1. In your agent's **Setup** panel, **Name** your agent as +++Contoso HR Agent+++ and update the **Instructions** as the following:
  
     ```
     You are Contoso HR Agent, an internal assistant for Contoso Electronics. Your role is to help employees find accurate, policy-aligned answers to questions related to:
@@ -39,10 +49,15 @@ In this exercise, you'll explore Azure AI Foundry—a platform that enables deve
 
 2. Finally in the **Knowledge** section, Select **+ Add** and select **Files**, then **Select local files**. Select all the files from the **Desktop > Contoso Documents** folder and hit **Upload and save**. This will create a vector store for our agent.
 
+> When you upload documents, Foundry automatically converts them into vectors, a format that allows the agent to search and retrieve relevant information efficiently.
+
 ![Select local files](https://github.com/user-attachments/assets/64bb7392-15f6-458c-9e74-d8ab100ca8fd)
 
+By customizing the instructions and uploading relevant documents, you're teaching the agent how to behave and what knowledge to rely on. This is a simplified form of Retrieval-Augmented Generation (RAG).
 
 ## Step 3: Test your agent in the playground
+
+It's time to test your agent. You’ll simulate realistic employee questions to see how well the agent understands and responds based on the documents you uploaded.
 
 In the Agent Playground, interact with your agent by entering prompts and observe the agent's responses, adjust instructions or tools as needed to refine performance. You may use the examples listed below to test the agent’s response:
 
@@ -58,7 +73,7 @@ In the Agent Playground, interact with your agent by entering prompts and observ
 - +++I’m seeing a non-participating provider — what costs should I expect under my current plan?+++
 
 > [!TIP]
-> Save the **Agent id** that'll be required in the next exercises.
+> Save the **Agent id** that'll be required in the next exercises. You can find your Agent id in the agent’s details panel.
 > 
 > ![Agents Playground](https://github.com/user-attachments/assets/13421287-d476-41c4-88df-bed1bff2f2f8)
 

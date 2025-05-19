@@ -1,10 +1,10 @@
 # Exercise 3: Configure agent properties and test on Teams
 
-Let's configure agentic properties in your Echo Bot to transform it into a Generative AI-powered agent.
+Now that you’ve created a basic bot, it’s time to enhance it with generative AI capabilities and upgrade it to an AI agent. In this exercise, you’ll install key libraries such as Semantic Kernel and prepare your agent to reason and respond more intelligently, ready for Teams or Copilot Chat.
 
 ## Step 1: Update Project file with new packages
 
-Right-click to **ContosoHRAgent** project and select **Edit Project File**, replace the ItemGroup that includes **PackageReference** with the following:
+The packages you'll add in this step will provide support for Azure AI integration. Right-click to **ContosoHRAgent** project and select **Edit Project File**, replace the ItemGroup that includes **PackageReference** with the following:
 
 ```
   <ItemGroup>
@@ -17,14 +17,18 @@ Right-click to **ContosoHRAgent** project and select **Edit Project File**, repl
 ## Step 2: Add Semantic Kernel in Program.cs
 
 Open **Program.cs** and add the following code snippet right before var app = builder.Build():
-    
+
 ```
 builder.Services.AddKernel();
 ```
 
-## Step 3: Create new classes for agent configuration and contersation state
+This registers the Semantic Kernel, a core component that allows your agent to interact with generative AI models.
+
+## Step 3: Add custom classes for document citations and message tracking
 
 Right-click to **ContosoHRAgent** project and select **Add > Class** and define your class name as +++FileReference.cs+++. Replace the existing code with the following:
+
+> This class defines the structure used when referencing specific documents in responses—useful when your agent cites content from uploaded files.
 
 ```
 using Microsoft.Agents.Core.Models;
@@ -42,6 +46,8 @@ namespace ContosoHRAgent
 ```
 
 Right-click to **ContosoHRAgent** project and select **Add > Class** and define your class name as +++ConversationStateExtensions.cs+++. Replace existing the code with following:
+
+> This class adds helper methods to manage and track the number of user messages—demonstrating how state is stored and modified during an ongoing conversation.
 
 ```
 using Microsoft.Agents.Builder.State;
@@ -65,4 +71,4 @@ namespace ContosoHRAgent
 
 ## Next Step
 
-Select **Next >** to go to the next exercise Bring your agent to Copilot Chat.
+Select **Next >** to go to the next exercise Integrate Azure AI Foundry Agent with M365 Agents SDK.
