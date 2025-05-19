@@ -1,21 +1,22 @@
 # Wrap-Up
 
-Congratulations! You've completed the lab and built your first Custom Engine Agent with the M365 Agents SDK and Azure AI Foundry!
+🎉 Congratulations! You've just built your first Custom Engine Agent using the Microsoft 365 Agents SDK and Azure AI Foundry!
 
 In this lab, you learned how to:
+* Configure an AI agent in Azure AI Foundry using the Agent Playground
+* Upload enterprise documents to ground your agent’s responses
+* Scaffold a bot using the M365 Agents SDK in Visual Studio
+* Add Semantic Kernel and connect to Azure AI Agent Service
+* Integrate your bot with the Azure AI Foundry agent for real-time, grounded reasoning
+* Deploy and test your agent in **Microsoft Teams** and **Copilot Chat**
 
-- Create and configure an AI agent in Azure AI Foundry using the Agent Playground.
-- Upload documents to ground your agent with enterprise knowledge.
-- Scaffold a basic bot project with the Microsoft 365 Agents SDK in Visual Studio.
-- Enhance your bot with Semantic Kernel and integrate Azure AI Agent Service.
-- Connect your local agent to the Foundry agent for real-time, grounded responses.
-- Test your agent in **Teams** and **Copilot Chat** as a custom engine agent.
+
 
 ## Next Steps
 
-- Customize your agent's personality and instructions.
-- Try different domains, documents, or multi-agent patterns.
-- Fork the starter repo and continue building from [here](https://github.com/microsoft/msbuild-lab328-cea-agentssdk)
+* Customize your agent’s tone, instructions, or capabilities
+* Experiment with different domains, documents, or even multi-agent designs
+* Fork the starter repo and keep building 👉 [Lab 328 - Build custom engine agents using Microsoft 365 Agents SDK](https://github.com/microsoft/msbuild-lab328-cea-agentssdk)
 
 ## Resources
 
