@@ -13,6 +13,12 @@ Azure AI Foundry is your launchpad for building AI agents. In this step, you’l
 2. From the Azure AI Foundry homepage, select the pre-polulated project in the list. This will direct you to the Azure AI Foundry project page.
     <img width="1004" alt="Project in foundry" src="https://github.com/user-attachments/assets/948bca8e-c087-41f2-890f-5ff7ac66c297" />
 
+> [!TIP]
+> If your project doesn't show up in the list of projects, you can go to +++https://portal.azure.com+++, login with the same credentials, go to **Resource Group > ResourceGroup1** and select **Azure AI project**, then **Launch studio**.
+>
+> <img width="787" alt="image" src="https://github.com/user-attachments/assets/2483b6b9-8214-4602-aa3d-8b74751176b2" />
+
+
 3. Once you are in your project, extend the left side bar and select **Agents**. This will open the Agents Playground. Select the OpenAI model from the dropdown list and select **Let's go**.
     <img width="1004" alt="AI Foundry" src="https://github.com/user-attachments/assets/7d17b20b-3ed0-49fa-9795-e917de869074" />
 
