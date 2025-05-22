@@ -6,12 +6,11 @@ In this exercise, you'll explore Azure AI Foundry, a platform that enables devel
 
 Azure AI Foundry is your launchpad for building AI agents. In this step, you’ll log in and locate your preconfigured project so you can explore what’s already set up.
 
-1. Open the browser and navigate to +++https://ai.azure.com+++ and sign to your Azure account. Use the following credentials to **Sign in**:
+1. Open the browser and navigate to +++https://ai.azure.com/allresources+++ and sign to your Azure account. Use the following credentials to **Sign in**:
     - **Email**: +++@lab.CloudPortalCredential(User1).Username+++
     - **Password**: +++@lab.CloudPortalCredential(User1).Password+++
 
 2. From the Azure AI Foundry homepage, select the pre-polulated project in the list. This will direct you to the Azure AI Foundry project page.
-    <img width="1004" alt="Project in foundry" src="https://github.com/user-attachments/assets/948bca8e-c087-41f2-890f-5ff7ac66c297" />
 
 > [!TIP]
 > If your project doesn't show up in the list of projects, you can go to +++https://portal.azure.com+++, login with the same credentials, go to **Resource Group > ResourceGroup1** and select **Azure AI project**, then **Launch studio**.
