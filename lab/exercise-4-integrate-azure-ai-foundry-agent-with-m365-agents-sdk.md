@@ -8,15 +8,15 @@ In this step, you’ll connect to the Azure AI Foundry agent by adding a client 
 
 In **ContosoHRAgent** project, open **Bot/EchoBot.cs** and add the following lines inside the EchoBot public class: 
 
-  ```
-  private readonly AIProjectClient _projectClient; 
-  private readonly string _agentId; 
-  ```
+```
+private readonly PersistentAgentsClient _projectClient;
+private readonly string _agentId;
+```
 
 Replace the existing EchoBot constructor with the following: 
 
-  ```
-  public EchoBot(AgentApplicationOptions options, IConfiguration configuration) : base(options)
+```
+public EchoBot(AgentApplicationOptions options, IConfiguration configuration) : base(options)
   {
 
       OnConversationUpdate(ConversationUpdateEvents.MembersAdded, WelcomeMessageAsync);
@@ -25,13 +25,13 @@ Replace the existing EchoBot constructor with the following:
       OnActivity(ActivityTypes.Message, OnMessageAsync);
 
       // Azure AI Foundry Project ConnectionString
-      string connectionString = configuration["AIServices:AzureAIFoundryProjectConnectionString"];
-      if (string.IsNullOrEmpty(connectionString))
+      string projectEndpoint = configuration["AIServices:ProjectEndpoint"];
+      if (string.IsNullOrEmpty(projectEndpoint))
       {
-          throw new InvalidOperationException("AzureAIFoundryProjectConnectionString is not configured.");
+          throw new InvalidOperationException("ProjectEndpoint is not configured.");
       }
-      _projectClient = AzureAIAgent.CreateAzureAIClient(connectionString, new AzureCliCredential());
-
+      _projectClient = new PersistentAgentsClient(projectEndpoint, new DefaultAzureCredential());
+      
       // Azure AI Foundry Agent Id
       _agentId = configuration["AIServices:AgentID"];
       if (string.IsNullOrEmpty(_agentId))
@@ -40,7 +40,7 @@ Replace the existing EchoBot constructor with the following:
       }
 
   }
-  ```
+```
 
 > **⚠️ Note:** You might see a warning (SKEXP0110) because this feature is still in preview. You can safely suppress this warning for now by right-clicking on AzureAIAgent, selecting **Quick Actions and Refactorings > Suppress or configure issues > Configure SKEXP0110 Severity > Silent**.
 > 
@@ -50,97 +50,96 @@ Replace **OnMessageAsync** method with the following:
 
 ```
  protected async Task OnMessageAsync(ITurnContext turnContext, ITurnState turnState, CancellationToken cancellationToken)
-{
-   // get the Azure AI Agent
-   var agentClient = _projectClient.GetAgentsClient();
-   var agentModel = await agentClient.GetAgentAsync(_agentId, cancellationToken);
-   var agent = new AzureAIAgent(agentModel, agentClient);
-
-   try
-   {
-       // send the initial message
-       await turnContext.StreamingResponse.QueueInformativeUpdateAsync("Working on it...", cancellationToken);
-
-       // increment the message count in state
-       int count = turnState.Conversation.IncrementMessageCount();
-       turnContext.StreamingResponse.QueueTextChunk($"({count}) ");
-
-       var fileReferences = new List<FileReference>();
-       var citations = new List<Citation>();
-       var quote = string.Empty;
-
-       // create the chat message to send to the agent
-       var message = new ChatMessageContent(AuthorRole.User, turnContext.Activity.Text);
-
-       // stream the response from the agent to the user
-       await foreach (StreamingChatMessageContent chunk in agent.InvokeStreamingAsync(message, cancellationToken: cancellationToken))
-       {
-           // get the annotation content from the message chunk items, if there are any
-           var annotations = chunk.Items.OfType<StreamingAnnotationContent>();
-           foreach (StreamingAnnotationContent annotation in annotations)
-           {
-               // check if the file reference already exists in the list and skip it if it does
-               if (fileReferences.Any(fr => fr.Quote == annotation.Quote)) { continue; }
-
-               var agentFile = await agent.Client.GetFileAsync(annotation.FileId, cancellationToken);
-               var citation = new Citation(string.Empty, agentFile.Value.Filename, "https://m365.cloud.microsoft/chat");
-
-               var fileReference = new FileReference(agentFile.Value.Id, agentFile.Value.Filename, annotation.Quote, citation);
-               fileReferences.Add(fileReference);
-           }
-
-           // if the message chunk content is empty, we can skip it
-           // this happens when the chunk contains StreamingAnnotationContent items
-           if (chunk.Content == null) { continue; }
-
-           // if the previous message chunk contained the citation quote, we can process it now
-           if (quote != string.Empty)
-           {
-               var fileReferenceIndex = fileReferences.FindIndex(fr => fr.Quote == quote);
-               turnContext.StreamingResponse.QueueTextChunk($" [{fileReferenceIndex + 1}] ");
-
-               // reset the quote to empty string to avoid processing it again
-               quote = string.Empty;
-               continue;
-           }
-
-           // if the message chunk contains an annotation quote 【4:0†source】
-           // store the value for the next message chunk so we can process it
-           // we don't want to send it to the user yet
-           if (chunk.Content.Contains('【'))
-           {
-               quote = chunk.Content;
-               continue;
-           }
-           else
-           {
-               // just a regular message chunk, we can send it to the user
-               turnContext.StreamingResponse.QueueTextChunk(chunk.Content);
-           }
-       }
-
-       // enable generated by AI label
-       turnContext.StreamingResponse.EnableGeneratedByAILabel = true;
-
-       // add sensitivity label
-       turnContext.StreamingResponse.SensitivityLabel = new SensitivityUsageInfo()
-       {
-           Name = "General",
-           Description = "Business data which is NOT meant for public consumption. This can be shared with internal employees, business guests and external partners as needed."
-       };
-
-       // add citations
-       foreach (var fileReference in fileReferences)
-       {
-           citations.Add(fileReference.Citation);
-       }
-       turnContext.StreamingResponse.AddCitations(citations);
-   }
-   finally
-   {
-       await turnContext.StreamingResponse.EndStreamAsync(cancellationToken);
-   }
-}
+    {
+        // get the Azure AI Agent
+        var agentModel = await _projectClient.Administration.GetAgentAsync(_agentId, cancellationToken);
+        var agent = new AzureAIAgent(agentModel, _projectClient);
+        
+        try
+        {
+            // send the initial message
+            await turnContext.StreamingResponse.QueueInformativeUpdateAsync("Working on it...", cancellationToken);
+  
+            // increment the message count in state
+            int count = turnState.Conversation.IncrementMessageCount();
+            turnContext.StreamingResponse.QueueTextChunk($"({count}) ");
+  
+            var fileReferences = new List<FileReference>();
+            var citations = new List<Citation>();
+            var quote = string.Empty;
+  
+            // create the chat message to send to the agent
+            var message = new ChatMessageContent(AuthorRole.User, turnContext.Activity.Text);
+  
+            // stream the response from the agent to the user
+            await foreach (StreamingChatMessageContent chunk in agent.InvokeStreamingAsync(message, cancellationToken: cancellationToken))
+            {
+                // get the annotation content from the message chunk items, if there are any
+                var annotations = chunk.Items.OfType<StreamingAnnotationContent>();
+                foreach (StreamingAnnotationContent annotation in annotations)
+                {
+                    // check if the file reference already exists in the list and skip it if it does
+                    if (fileReferences.Any(fr => fr.Quote == annotation.Label)) { continue; }
+  
+                    var agentFile = await agent.Client.Files.GetFileAsync(annotation.ReferenceId, cancellationToken);
+                    var citation = new Citation(string.Empty, agentFile.Value.Filename, "https://m365.cloud.microsoft/chat");
+  
+                    var fileReference = new FileReference(agentFile.Value.Id, agentFile.Value.Filename, annotation.Label, citation);
+                    fileReferences.Add(fileReference);
+                }
+  
+                // if the message chunk content is empty, we can skip it
+                // this happens when the chunk contains StreamingAnnotationContent items
+                if (chunk.Content == null) { continue; }
+  
+                // if the previous message chunk contained the citation quote, we can process it now
+                if (quote != string.Empty)
+                {
+                    var fileReferenceIndex = fileReferences.FindIndex(fr => fr.Quote == quote);
+                    turnContext.StreamingResponse.QueueTextChunk($" [{fileReferenceIndex + 1}] ");
+  
+                    // reset the quote to empty string to avoid processing it again
+                    quote = string.Empty;
+                    continue;
+                }
+  
+                // if the message chunk contains an annotation quote 【4:0†source】
+                // store the value for the next message chunk so we can process it
+                // we don't want to send it to the user yet
+                if (chunk.Content.Contains('【'))
+                {
+                    quote = chunk.Content;
+                    continue;
+                }
+                else
+                {
+                    // just a regular message chunk, we can send it to the user
+                    turnContext.StreamingResponse.QueueTextChunk(chunk.Content);
+                }
+            }
+  
+            // enable generated by AI label
+            turnContext.StreamingResponse.EnableGeneratedByAILabel = true;
+  
+            // add sensitivity label
+            turnContext.StreamingResponse.SensitivityLabel = new SensitivityUsageInfo()
+            {
+                Name = "General",
+                Description = "Business data which is NOT meant for public consumption. This can be shared with internal employees, business guests and external partners as needed."
+            };
+  
+            // add citations
+            foreach (var fileReference in fileReferences)
+            {
+                citations.Add(fileReference.Citation);
+            }
+            turnContext.StreamingResponse.AddCitations(citations);
+        }
+        finally
+        {
+            await turnContext.StreamingResponse.EndStreamAsync(cancellationToken);
+        }
+    }
 ```
 
 > **Summary:** What happens in OnMessageAsync?
@@ -158,8 +157,8 @@ Add your Foundry connection details to appsettings.json, these values connect yo
 ```
 ,
   "AIServices": {
-    "AzureAIFoundryProjectConnectionString": "<AzureAIFoundryProjectConnectionString>",
-    "AgentID": "<AzureAIFoundryAgentId>"
+   "AgentID": "<AzureAIFoundryAgentId>",
+   "ProjectEndpoint": "<ProjectEndpoint>"
   }
 ```
 
@@ -169,9 +168,7 @@ Replace the **<AzureAIFoundryAgentId>** with your **Agent id** which can be foun
 
 ![Agents Playground](https://github.com/user-attachments/assets/13421287-d476-41c4-88df-bed1bff2f2f8)
 
-Replace **<AzureAIFoundryProjectConnectionString>** with your AI Foundry project connection string which can be found in the **Overview** page of the AI Foundry, under the Project details.
-
-![Connection String](https://github.com/user-attachments/assets/d2e59830-11bd-48ae-9bfc-fff2999cf5f2)
+Replace **<ProjectEndpoint>** with your AI Foundry project connection string which can be found in the **Overview** page of the AI Foundry, under Endpoints and keys.
 
 Final version of the **appsettings.json** will look like below:
 
@@ -217,8 +214,8 @@ Final version of the **appsettings.json** will look like below:
     }
   ],
   "AIServices": {
-    "AzureAIFoundryProjectConnectionString": "<AzureAIFoundryProjectConnectionString>",
-    "AgentID": "<AzureAIFoundryAgentId>"
+   "AgentID": "<AzureAIFoundryAgentId>",
+   "ProjectEndpoint": "<ProjectEndpoint>"
   }
 }
 ```
@@ -227,9 +224,9 @@ Final version of the **appsettings.json** will look like below:
 
 Open **Tools > Command Line > Developer Command Prompt** and run:
 
-  ```
-  az login 
-  ```
+```
+azd auth login --scope https://ai.azure.com/.default
+```
 
 A window will pop up on your browser and you'll need to sign into your Microsoft account to successfully complete az login. Use the following credentials to sign in:
 * **Email**: +++@lab.CloudPortalCredential(User1).Username+++
