@@ -8,9 +8,9 @@ The packages you'll add in this step will provide support for Azure AI integrati
 
 ```
   <ItemGroup>
-	<PackageReference Include="Microsoft.Agents.Authentication.Msal" Version="1.1.40-beta" />
-	<PackageReference Include="Microsoft.Agents.Hosting.AspNetCore" Version="1.1.40-beta" />
-	<PackageReference Include="Microsoft.SemanticKernel.Agents.AzureAI" Version="1.49.0-preview" />
+    <PackageReference Include="Microsoft.Agents.Authentication.Msal" Version="1.1.91-beta" />
+    <PackageReference Include="Microsoft.Agents.Hosting.AspNetCore" Version="1.1.91-beta" />
+    <PackageReference Include="Microsoft.SemanticKernel.Agents.AzureAI" Version="1.52.1-preview" />
   </ItemGroup>
 ```
 
