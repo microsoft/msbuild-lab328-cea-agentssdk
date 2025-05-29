@@ -25,11 +25,11 @@ public class EchoBot : AgentApplication
   
         // Azure AI Foundry Project ConnectionString
         string projectEndpoint = configuration["AIServices:ProjectEndpoint"];
-        if (string.IsNullOrEmpty(connectionString))
+        if (string.IsNullOrEmpty(projectEndpoint))
         {
             throw new InvalidOperationException("ProjectEndpoint is not configured.");
         }
-        _projectClient = new PersistentAgentsClient(agentConfig.ProjectEndpoint, new DefaultAzureCredential());
+        _projectClient = new PersistentAgentsClient(projectEndpoint, new DefaultAzureCredential());
         
         // Azure AI Foundry Agent Id
         _agentId = configuration["AIServices:AgentID"];
