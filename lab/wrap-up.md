@@ -14,7 +14,7 @@ In this lab, you learned how to:
 
 * Customize your agent’s tone, instructions, or capabilities
 * Experiment with different domains, documents, or even multi-agent designs
-* Fork the starter repo and keep building 👉 [Lab 328 - Build custom engine agents using Microsoft 365 Agents SDK](https://github.com/microsoft/msbuild-lab328-cea-agentssdk)
+* Fork the starter repo and keep building 👉 [Copilot Developer Camp](https://aka.ms/copilotdevcamp)
 
 ## Resources
 

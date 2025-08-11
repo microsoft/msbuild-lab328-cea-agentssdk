@@ -1,4 +1,4 @@
-﻿using Azure.AI.Projects;
+using Azure.AI.Agents.Persistent;
 using Azure.Identity;
 using Microsoft.Agents.Builder;
 using Microsoft.Agents.Builder.App;
@@ -13,7 +13,7 @@ namespace ContosoHRAgent.Bot;
   
 public class EchoBot : AgentApplication
 {
-    private readonly AIProjectClient _projectClient;
+    private readonly PersistentAgentsClient _projectClient;
     private readonly string _agentId;
     public EchoBot(AgentApplicationOptions options, IConfiguration configuration) : base(options)
     {
@@ -24,13 +24,13 @@ public class EchoBot : AgentApplication
         OnActivity(ActivityTypes.Message, OnMessageAsync);
   
         // Azure AI Foundry Project ConnectionString
-        string connectionString = configuration["AIServices:AzureAIFoundryProjectConnectionString"];
-        if (string.IsNullOrEmpty(connectionString))
+        string projectEndpoint = configuration["AIServices:ProjectEndpoint"];
+        if (string.IsNullOrEmpty(projectEndpoint))
         {
-            throw new InvalidOperationException("AzureAIFoundryProjectConnectionString is not configured.");
+            throw new InvalidOperationException("ProjectEndpoint is not configured.");
         }
-        _projectClient = AzureAIAgent.CreateAzureAIClient(connectionString, new AzureCliCredential());
-  
+        _projectClient = new PersistentAgentsClient(projectEndpoint, new DefaultAzureCredential());
+        
         // Azure AI Foundry Agent Id
         _agentId = configuration["AIServices:AgentID"];
         if (string.IsNullOrEmpty(_agentId))
@@ -54,10 +54,9 @@ public class EchoBot : AgentApplication
     protected async Task OnMessageAsync(ITurnContext turnContext, ITurnState turnState, CancellationToken cancellationToken)
     {
         // get the Azure AI Agent
-        var agentClient = _projectClient.GetAgentsClient();
-        var agentModel = await agentClient.GetAgentAsync(_agentId, cancellationToken);
-        var agent = new AzureAIAgent(agentModel, agentClient);
-  
+        var agentModel = await _projectClient.Administration.GetAgentAsync(_agentId, cancellationToken);
+        var agent = new AzureAIAgent(agentModel, _projectClient);
+        
         try
         {
             // send the initial message
@@ -82,12 +81,12 @@ public class EchoBot : AgentApplication
                 foreach (StreamingAnnotationContent annotation in annotations)
                 {
                     // check if the file reference already exists in the list and skip it if it does
-                    if (fileReferences.Any(fr => fr.Quote == annotation.Quote)) { continue; }
+                    if (fileReferences.Any(fr => fr.Quote == annotation.Label)) { continue; }
   
-                    var agentFile = await agent.Client.GetFileAsync(annotation.FileId, cancellationToken);
+                    var agentFile = await agent.Client.Files.GetFileAsync(annotation.ReferenceId, cancellationToken);
                     var citation = new Citation(string.Empty, agentFile.Value.Filename, "https://m365.cloud.microsoft/chat");
   
-                    var fileReference = new FileReference(agentFile.Value.Id, agentFile.Value.Filename, annotation.Quote, citation);
+                    var fileReference = new FileReference(agentFile.Value.Id, agentFile.Value.Filename, annotation.Label, citation);
                     fileReferences.Add(fileReference);
                 }
   
