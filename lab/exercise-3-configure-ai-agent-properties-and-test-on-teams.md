@@ -255,8 +255,8 @@ az login
 ```
 
 A window will pop up on your browser and you'll need to sign into your Microsoft account to successfully complete az login. Use the following credentials to **Sign in**:
-    - **Email**: +++@lab.CloudPortalCredential(User1).Username+++
-    - **Password**: +++@lab.CloudPortalCredential(User1).Password+++
+  - **Email**: +++@lab.CloudPortalCredential(User1).Username+++
+  - **Password**: +++@lab.CloudPortalCredential(User1).Password+++
 
 Expand **Start** and select **Dev Tunnels > Create a Tunnel**:
  
