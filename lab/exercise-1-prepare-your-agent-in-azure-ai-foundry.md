@@ -14,7 +14,7 @@ In this exercise, you'll explore Azure AI Foundry, a platform that enables devel
 
 Azure AI Foundry is your launchpad for building AI agents. In this step, you’ll log in to Azure AI Foundry with the account that has Azure subscription enabled.
 
-1. Open the browser and navigate to +++https://ai.azure.com/allresources+++ and sign to your Azure account. Use the following credentials to **Sign in**:
+1. Open the browser and navigate to +++https://ai.azure.com+++ and sign to your Azure account. Use the following credentials to **Sign in**:
     - **Email**: +++@lab.CloudPortalCredential(User1).Username+++
     - **Password**: +++@lab.CloudPortalCredential(User1).Password+++
 1. From the Azure AI Foundry homepage, select **+ Create new**, **Azure AI Foundry resource** and then **Next**.
@@ -23,7 +23,7 @@ Azure AI Foundry is your launchpad for building AI agents. In this step, you’l
 1. When your project is created, you'll be redirected to your project, extend the left side bar and select **Agents**. This will open the Agents Playground.
 1. In the Agent Playground, the first time you'll see the **Deploy a model** window. Search for **gpt-4o** and select **Confirm**, then select **Deploy** in the following window.
 1. Once you are in the **Agents Playground**, you'll recognize there is a pre-populated agent for you in the list. Select the agent and select **Try in playground**.
-    ![The Azure AI Foundry list of Agents with the custom agent and the "Try in playground" command highlighted.](https://github.com/user-attachments/assets/dd481101-c15d-4aed-af62-aeb7d3c8e5ed){width="1029"}
+    ![The Azure AI Foundry list of Agents with the custom agent and the "Try in playground" command highlighted.](https://github.com/user-attachments/assets/dd481101-c15d-4aed-af62-aeb7d3c8e5ed)
 
 > [!TIP]
 > If you don't see the agent side bar with **Try in playground** option when you click on the agent, extend the blowser size on your screen until it shows up on the right side.
