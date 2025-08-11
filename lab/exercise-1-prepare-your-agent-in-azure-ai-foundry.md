@@ -53,7 +53,7 @@ Example scenarios you should support:
 - What happens during a performance review?
 ```
 
-2. Finally in the **Knowledge** section, Select **+ Add** and select **Files**, then **Select local files**. Download this zip file consisting of few files from the following **[link](https://download-directory.github.io/?url=https://github.com/microsoft/copilot-camp/tree/main/src/agents-sdk/docs/)**, extract the files, browse for them and hit **Upload and save** to upload them. This will create a vector store for our agent.
+2. Finally in the **Knowledge** section, Select **+ Add** and select **Files**, then **Select local files**. Select all the files from the **Desktop > Contoso Documents** folder and hit **Upload and save**. This will create a vector store for our agent.
 
 > When you upload documents, Foundry automatically converts them into vectors, a format that allows the agent to search and retrieve relevant information efficiently.
 
