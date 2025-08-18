@@ -12,9 +12,11 @@ The package you'll add in this step will provide support for Azure AI integratio
 
 ![Semantic Kernel Nuget Package](https://github.com/user-attachments/assets/37a290f4-e825-4140-a294-b1a8d9e1f10a)
 
+Select **Apply** and **I Accept** in the following pop-up boxes to carry on with installation.
+
 ### Step 2: Add Semantic Kernel in Program.cs
 
-Open **Program.cs** and add the following code snippet right before var app = builder.Build():
+Open **Program.cs** and add the following code snippet right before var *app = builder.Build()*:
 
 ```
 builder.Services.AddKernel();
@@ -280,6 +282,9 @@ Expand the startup item on top of Visual Studio, where there is by default **<Mu
 You're now ready to run your integrated agent and test it live in Microsoft Teams. Make sure your dev tunnel is created and your account is authenticated.
 
 Once Dev Tunnel is created, hit **Start** or **F5** to start debugging. Microsoft Teams will launch automatically, and your agent app will pop up on the window. Select **Add** and **Open** to start chatting with your agent.  
+
+>**⚠️ Note:** If the agent doesn't show up automatically on Microsoft Teams (Browser), select **Apps > Manage your apps > Upload an app** and then select **Upload a custom app** on Teams. In the File Explorer go to your project folder +++C:\Users\LabUser\source\repos\ContosoHRAgent\M365Agent\appPackage\build+++ select **appPackage.local.zip**, then select **Add** and **Open**.
+>![The UI of Microsoft Teams when uploading an app, with the "Upload an app" command highlighted.](https://github.com/user-attachments/assets/5fad723f-b087-4481-8c8c-d5ad87c1bead)
 
 You can ask one of the following questions to interact with the agent:
 

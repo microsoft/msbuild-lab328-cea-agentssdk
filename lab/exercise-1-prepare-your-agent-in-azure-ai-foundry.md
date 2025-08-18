@@ -21,9 +21,7 @@ Azure AI Foundry is your launchpad for building AI agents. In this step, you’l
 1. Leave the project name as recommended and select **Create**.
 1. This will scaffold a new agent project for you in Azure AI Foundry, it usually takes 3-5 minutes.
 1. When your project is created, you'll be redirected to your project, extend the left side bar and select **Agents**. This will open the Agents Playground.
-1. In the Agent Playground, the first time you'll see the **Deploy a model** window. Search for **gpt-4o** and select **Confirm**, then select **Deploy** in the following window.
-1. Once you are in the **Agents Playground**, you'll recognize there is a pre-populated agent for you in the list. Select the agent and select **Try in playground**.
-    ![The Azure AI Foundry list of Agents with the custom agent and the "Try in playground" command highlighted.](https://github.com/user-attachments/assets/dd481101-c15d-4aed-af62-aeb7d3c8e5ed)
+1. In the Agent Playground, you'll see the **Select or deploy a model** window. Select the existing **gpt-4o** in the dropdown menu and select **Next**. Then you'll be redirected to Agents playground.
 
 > [!TIP]
 > If you don't see the agent side bar with **Try in playground** option when you click on the agent, extend the blowser size on your screen until it shows up on the right side.
@@ -32,7 +30,7 @@ Azure AI Foundry is your launchpad for building AI agents. In this step, you’l
 
 Now that you're inside the Agents Playground, you'll customize your agent's identity and behavior to match a real-world scenario: an internal HR Agent at Contoso.
 
-1. In your agent's **Setup** panel, **Name** your agent as Contoso HR Agent and update the **Instructions** as the following:
+1. In your agent's **Setup** panel, **Name** your agent as +++Contoso HR Agent+++ and update the **Instructions** as the following:
 
 ```
 You are Contoso HR Agent, an internal assistant for Contoso Electronics. Your role is to help employees find accurate, policy-aligned answers to questions related to:
