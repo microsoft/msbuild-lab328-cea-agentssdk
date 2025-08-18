@@ -8,12 +8,10 @@ This exercise introduces you to the Microsoft 365 Agents SDK and Microsoft 365 A
 
 Now that you’ve seen how to build an agent using Azure AI Foundry, let’s switch gears and explore how to build your own agent locally using the Microsoft 365 Agents SDK. This SDK lets you build multi-channel, production-ready agents that can run in Microsoft Teams, Microsoft 365 Copilot, and other preferred channels.
 
-1. Open Visual Studio 2022 and select **Sign in** and **Work or school account**, use the following credentials:
+1. Open Visual Studio 2022 and select **Sign in** and **Work or school account**, then **Continue**, use the following credentials:
     - **Email**: +++@lab.CloudPortalCredential(User1).Username+++
     - **Password**: +++@lab.CloudPortalCredential(User1).Password+++
 1. During the sign in process, there will be a pop-up on the screen asking *Automatically sign in to all desktop apps and websites on this device?*, select **No, this app only**.
-    ![Sign in to app devices pop up](https://github.com/user-attachments/assets/c5cb1ab0-92c7-4dec-bbc1-166919bfbeab)
-
 1. When sign in is complete, select **Close** and then select **Create a new project**.
 1. Search and select **Microsoft 365 Agents** templatem then **Next**.
 1. Provide a name for your agent as `ContosoHRAgent` and select **Create**.  
