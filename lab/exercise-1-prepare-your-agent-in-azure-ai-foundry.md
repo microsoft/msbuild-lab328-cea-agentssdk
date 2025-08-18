@@ -20,8 +20,7 @@ Azure AI Foundry is your launchpad for building AI agents. In this step, you’l
 1. From the Azure AI Foundry homepage, select **Create an agent**.
 1. Leave the project name as recommended and select **Create**.
 1. This will scaffold a new agent project for you in Azure AI Foundry, it usually takes 3-5 minutes.
-1. When your project is created, you'll be redirected to your project, extend the left side bar and select **Agents**. This will open the Agents Playground.
-1. In the Agent Playground, you'll see the **Select or deploy a model** window. Select the existing **gpt-4o** in the dropdown menu and select **Next**. Then you'll be redirected to Agents playground.
+1. When your project is created, you'll be redirected to your project, **Playgrounds** tab. You'll see the **Select or deploy a model** window. Select the existing **gpt-4o** in the dropdown menu and select **Next**. Then you'll be redirected to Agents playground.
 
 > [!TIP]
 > If you don't see the agent side bar with **Try in playground** option when you click on the agent, extend the blowser size on your screen until it shows up on the right side.
