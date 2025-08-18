@@ -30,7 +30,7 @@ Azure AI Foundry is your launchpad for building AI agents. In this step, you’l
 
 Now that you're inside the Agents Playground, you'll customize your agent's identity and behavior to match a real-world scenario: an internal HR Agent at Contoso.
 
-1. In your agent's **Setup** panel, **Name** your agent as Contoso HR Agent and update the **Instructions** as the following:
+1. In your agent's **Setup** panel, **Name** your agent as +++Contoso HR Agent+++ and update the **Instructions** as the following:
 
 ```
 You are Contoso HR Agent, an internal assistant for Contoso Electronics. Your role is to help employees find accurate, policy-aligned answers to questions related to:
