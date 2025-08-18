@@ -17,9 +17,9 @@ Azure AI Foundry is your launchpad for building AI agents. In this step, you’l
 1. Open the browser and navigate to +++https://ai.azure.com+++ and sign to your Azure account. Use the following credentials to **Sign in**:
     - **Email**: +++@lab.CloudPortalCredential(User1).Username+++
     - **Password**: +++@lab.CloudPortalCredential(User1).Password+++
-1. From the Azure AI Foundry homepage, select **+ Create new**, **Azure AI Foundry resource** and then **Next**.
+1. From the Azure AI Foundry homepage, select **Create an agent**.
 1. Leave the project name as recommended and select **Create**.
-1. This will scaffold a new project for you in Azure AI Foundry, it usually takes 3-5 minutes.
+1. This will scaffold a new agent project for you in Azure AI Foundry, it usually takes 3-5 minutes.
 1. When your project is created, you'll be redirected to your project, extend the left side bar and select **Agents**. This will open the Agents Playground.
 1. In the Agent Playground, the first time you'll see the **Deploy a model** window. Search for **gpt-4o** and select **Confirm**, then select **Deploy** in the following window.
 1. Once you are in the **Agents Playground**, you'll recognize there is a pre-populated agent for you in the list. Select the agent and select **Try in playground**.
